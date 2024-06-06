@@ -1,0 +1,81 @@
+<div class="menu">
+  <ul>
+      <li><a routerLink="/list">List</a></li> 
+
+  </ul>
+</div> 
+<div class="form-container">
+    <h2>Historique Client</h2>
+  
+    <!-- Formulaire d'ajout -->
+    <form [formGroup]="addHistoriqueClientForm" (ngSubmit)="saveHistorique(addHistoriqueClientForm.value)">
+      <div class="form-group">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" formControlName="nom">
+      </div>
+      <div class="form-group">
+        <label for="projet">Projet:</label>
+        <input type="projet" id="projet" formControlName="projet">
+      </div>
+      <div class="form-group">
+        <label for="commentaire">Commentaire:</label>
+        <textarea id="commentaire" rows="4" formControlName="commentaire"></textarea>
+      </div>
+      <!--<button >Add Historique</button>-->
+      <button type="submit" class="btn btn-primary" [disabled]="addHistoriqueClientForm.invalid">Add Historique</button>
+       </form>
+  <!-- Liste des historiques clients 
+  <div *ngIf="listHistorique.length > 0">
+    <h2>Liste des historiques clients</h2>
+    <ul>
+      <li *ngFor="let historiqueClient of listHistorique">
+        <p>{{ historiqueClient.nom }}</p>
+        <p>{{ historiqueClient.projet }}</p>
+        <p>{{ historiqueClient.commentaire }}</p>
+      </li>
+    </ul>
+  </div>
+</div>-->
+<!-- Liste des historiques clients -->
+<div *ngIf="listHistorique.length > 0">
+    <h2>Liste Historiques Clients</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nom</th>
+          <th>Projet</th>
+          <th>Commentaire</th>
+          <th>Actions</th> <!-- Nouvelle colonne pour les boutons Edit et Delete -->
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let historiqueClient of listHistorique">
+          <td>{{ historiqueClient.id }}</td>
+          <td>{{ historiqueClient.nom }}</td>
+          <td>{{ historiqueClient.projet }}</td>
+          <td>{{ historiqueClient.commentaire }}</td>
+          <td>
+       
+            <!-- Bouton Edit -->
+           <!-- <button (click)="editHistorique(historiqueClient.id)">Edit</button>-->
+           
+           <a class="dropdown-item" [routerLink]="['/edit', historiqueClient.id]"><i
+            class="ri-pencil-fill align-bottom me-2 text-muted float-start"></i> Edit</a>
+           <!-- <button>Edit</button> -->
+            <!-- Bouton Delete -->
+          <button type="button" class="btn btn-danger"  (click)="deleteHistoriqueClient(historiqueClient.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+
+    <!-- Formulaire de modification 
+    <form [formGroup]="editHistoriqueClientForm" (ngSubmit)="editHistoriqueClientForm">
+    </form>
+-->
+  
+    

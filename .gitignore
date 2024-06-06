@@ -1,0 +1,34 @@
+# Ignore les fichiers spécifiques à Java
+*.class
+*.war
+*.ear
+*.jar
+
+# Ignore les fichiers de configuration de Eclipse
+.classpath
+.project
+.settings/
+
+# Ignore les fichiers de configuration de IntelliJ
+.idea/
+
+# Ignore les fichiers spécifiques à Node.js
+node_modules/
+npm-debug.log
+
+# Ignore les fichiers spécifiques à Angular
+/dist/
+/node_modules/
+*.iml
+
+# Ignore les fichiers spécifiques à Spring dans le dossier FirstProject
+/FirstProject/target/
+/FirstProject/.mvn/
+/FirstProject/.idea/
+
+# Ignore les fichiers spécifiques à Angular dans le dossier firstProjectAngular
+/firstProjectAngular/node_modules/
+/firstProjectAngular/dist/
+/firstProjectAngular/.idea/
+/firstProjectAngular/*.iml
+/firstProjectAngular/.angular/cache

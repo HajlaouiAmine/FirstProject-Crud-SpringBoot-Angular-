@@ -1,0 +1,38 @@
+  <div class="container">
+    <h2>Update Historique Client</h2>
+    <form [formGroup]="editHistoriqueClientForm" > 
+      <div class="form-group">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" class="form-control" formControlName="nom">
+      </div>
+      <div class="form-group">
+        <label for="projet">Projet:</label>
+        <input type="projet" id="projet" class="form-control" formControlName="projet">
+      </div>
+      <div class="form-group">
+        <label for="commentaire">Commentaire:</label>
+        <textarea id="commentaire" rows="4" class="form-control" formControlName="commentaire"></textarea>
+      </div>
+      <button (click)="updateHistoriqueClient()" class="btn btn-success w-sm" [disabled]="editHistoriqueClientForm.invalid">Update</button>
+
+      <!-- <button type="submit" class="btn btn-primary">Enregistrer</button> -->
+      <!-- </form> -->
+      <!-- <div class="form-group">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" formControlName="nom">
+      </div>
+      <div class="form-group">
+        <label for="projet">Projet:</label>
+        <input type="text" id="projet" formControlName="projet">
+      </div>
+      <div class="form-group">
+        <label for="commentaire">Commentaire:</label>
+        <textarea id="commentaire" rows="4" formControlName="commentaire"></textarea>
+      </div>
+      <button type="submit" [disabled]="editHistoriqueClientForm.invalid">Enregistrer</button>
+    </form>
+  </div> -->
+ 
+ 
+   
+  
